@@ -1,1 +1,11 @@
 node_modules
+.nyc_output/processinfo/index.json
+.nyc_output/f877ed32-74bb-4616-99fd-fbf7b7efb33b.json
+.nyc_output/processinfo/f877ed32-74bb-4616-99fd-fbf7b7efb33b.json
+coverage/sort-arrow-sprite.png
+coverage/index.html
+coverage/base.css
+coverage/sorter.js
+coverage/prettify.js
+coverage/block-navigation.js
+coverage/prettify.css
