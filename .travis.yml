@@ -1,8 +1,15 @@
 sudo: required
+services: mongodb
 language: node_js
 node_js:
   - 8.9.0
 before_install:
-  - npm install -g gulp
+  - npm install
 script:
   - npm run dev
+  
+deploy:
+  provider: releases
+  on:
+    skip_cleanup: true
+    tags: true

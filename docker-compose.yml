@@ -1,0 +1,32 @@
+version: '2.1'
+
+services:
+  mongo:
+    image: mongo
+    ports:
+     - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: tasket
+    networks:
+      - nodeService
+  nodejs-basic-api:
+    image: nodejs-basic-api
+    build: .
+    environment:
+      NODE_ENV: production
+      MONGODB_URL: mongodb://mongo:27017
+      MONGODB_DBNAME: tasket
+      MONGODB_USER: admin
+      MONGODB_PASSWORD: admin
+      PORT: 9000
+    ports:
+      - 9000:9000
+    depends_on:
+      - mongo
+    networks:
+      - nodeService
+networks:
+  nodeService:
+    driver: bridge
